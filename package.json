@@ -1,0 +1,59 @@
+{
+    "name": "math-to-svg",
+    "displayName": "Math to Svg",
+    "description": "Convert AsciiMath notation to SVG for Markdown",
+    "icon": "icon.png",
+    "version": "0.1.0",
+    "publisher": "justforfun-click",
+    "engines": {
+        "vscode": "^1.51.0"
+    },
+    "keywords": [
+        "AsciiMath",
+        "Math",
+        "TeX",
+        "LaTex",
+        "KaTeX",
+        "Markdown"
+    ],
+    "preview": true,
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/justforfun-click/math-vs-code-extension"
+    },
+    "license": "MIT",
+    "activationEvents": [
+        "onLanguage:markdown",
+        "onCommand:math-to-svg.insert-math"
+    ],
+    "main": "./extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "math-to-svg.insert-math",
+                "title": "Math to SVG: Insert math template"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "math-to-svg.insert-math",
+                "key": "ctrl+M",
+                "when": "resourceLangId == markdown && editorFocus"
+            }
+        ],
+        "markdown.markdownItPlugins": true,
+        "menus": {
+            "editor/context": [
+                {
+                    "command": "math-to-svg.insert-math",
+                    "when": "resourceLangId == markdown && editorFocus",
+                    "group": "motification"
+                }
+            ]
+        }
+    },
+    "dependencies": {
+        "markdown-it": "^12.0.2",
+        "mathjax-full": "^3.1.2"
+    }
+}
