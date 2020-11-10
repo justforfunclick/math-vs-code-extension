@@ -66,7 +66,7 @@ Shortcut `Ctrl+M` will insert `<img src="https://math.justforfun.click/$/"/>` fo
 
 Github friendly. Formulas can be displayed in github directly.
 
-Additional, user who doesn't install this extension can view the formulas also (but always in black color, not well if user uses dark theme).
+Additionally, user who doesn't install this extension can view the formulas also (but always in black color, not well if user uses dark theme).
 
 More AsciiMath syntax please check the AsciiMath website: http://asciimath.org.
 
