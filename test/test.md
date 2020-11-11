@@ -31,3 +31,12 @@ bla bla.
         (x, -, y, =, 5)
     :}
 ">
+
+## Single quotation character
+> <img src="https://math.justforfun.click/$/f'(x) = h'(g(x)) * g'(x)"/>.
+
+## Align center
+<p align="center"><img src="https://math.justforfun.click/$/a = a + b"/></p>
+
+## Two instances in one html block
+<p align="center"><img src="https://math.justforfun.click/$/a = a + b"/></p><p align="center"><img src="https://math.justforfun.click/$/c = d + e"/></p>

@@ -3,7 +3,7 @@
     "displayName": "Math to Svg",
     "description": "Convert AsciiMath notation to SVG for Markdown",
     "icon": "icon.png",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "publisher": "justforfun-click",
     "engines": {
         "vscode": "^1.51.0"

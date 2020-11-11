@@ -15,18 +15,23 @@ const html = mathjax.document('', {InputJax: ascii, OutputJax: svg});
 const vscode = require('vscode');
 const mathTemplateSnippet = new vscode.SnippetString('<img src="https://math.justforfun.click/$/$0"/>');
 
-const imgSrcRex = /<img .*\bsrc\s*=\s*["']https:\/\/math\.justforfun\.click\/\$\/([^"']*)["'][ \/>]/s;
-const imgStyleRex = /<img .*\bstyle\s*=\s*["']([^'"]*)["'][ \/>]/s;
+const imgRex = /<img .*?\bsrc\s*=\s*"https:\/\/math\.justforfun\.click\/\$\/([^"]*)"[^>]*>/s;
+const imgStyleRex = /\bstyle\s*=\s*"([^"]*)"/s;
 
 function render(md, options) {
     md.renderer.rules.html_block = md.renderer.rules.html_inline = (tokens, idx, options, env, self) => {
         var token = tokens[idx];
         var content = token.content;
-        var imgSrcMatches = content.match(imgSrcRex);
-        if (imgSrcMatches) {
-            var mathContent = imgSrcMatches[1];
+        while (true) {
+            var imgMatches = content.match(imgRex);
+            if (!imgMatches) {
+                break;
+            }
+
+            var imgContent = imgMatches[0];
+            var mathContent = imgMatches[1].replace(/\s+/g, ' ');
             var svgContent = adaptor.innerHTML(html.convert(mathContent));
-            var imgStyleMatches = content.match(imgStyleRex);
+            var imgStyleMatches = imgContent.match(imgStyleRex);
             if (imgStyleMatches) {
                 var styleContent = imgStyleMatches[1];
                 if (styleContent.indexOf("width:") >= 0 || styleContent.indexOf("height:") >= 0) {
@@ -38,7 +43,7 @@ function render(md, options) {
                 stylePos = svgContent.indexOf('"', stylePos + styleStr.length);
                 svgContent = svgContent.substring(0, stylePos) + ";" + styleContent + svgContent.substring(stylePos);
             }
-            return svgContent;
+            content = content.replace(imgContent, svgContent);
         }
         return content;
     };
