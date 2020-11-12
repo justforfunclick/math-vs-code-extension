@@ -32,8 +32,10 @@ bla bla.
     :}
 ">
 
-## Single quotation character
-> <img src="https://math.justforfun.click/$/f'(x) = h'(g(x)) * g'(x)"/>.
+## Prime notation (`'`) test
+> <img src="https://math.justforfun.click/$/h'x'''(x) = g'(h(x)')"/>
+
+> <img src="https://math.justforfun.click/$/f'(x) = h'(g(x)) * g'(x)"/>
 
 ## Align center
 <p align="center"><img src="https://math.justforfun.click/$/a = a + b"/></p>

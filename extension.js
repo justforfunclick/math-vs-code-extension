@@ -1,10 +1,11 @@
 'use strict';
 
-var { mathjax } = require('mathjax-full/js/mathjax');
-var { AsciiMath } = require('mathjax-full/js/input/asciimath');
-var { SVG } = require('mathjax-full/js/output/svg');
-var { RegisterHTMLHandler } = require('mathjax-full/js/handlers/html');
-var { liteAdaptor } = require('mathjax-full/js/adaptors/liteAdaptor');
+const mathJaxPackage = "@justforfun-click/mathjax"
+const { mathjax } = require(`${mathJaxPackage}/js/mathjax`);
+const { AsciiMath } = require(`${mathJaxPackage}/js/input/asciimath`);
+const { SVG } = require(`${mathJaxPackage}/js/output/svg`);
+const { RegisterHTMLHandler } = require(`${mathJaxPackage}/js/handlers/html`);
+const { liteAdaptor } = require(`${mathJaxPackage}/js/adaptors/liteAdaptor`);
 
 const adaptor = liteAdaptor();
 const handler = RegisterHTMLHandler(adaptor);
