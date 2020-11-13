@@ -1,9 +1,9 @@
 {
     "name": "math-to-svg",
-    "displayName": "Math to Svg",
+    "displayName": "Math to SVG",
     "description": "Convert AsciiMath notation to SVG for Markdown",
     "icon": "icon.png",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "publisher": "justforfun-click",
     "engines": {
         "vscode": "^1.51.0"
@@ -53,7 +53,7 @@
         }
     },
     "dependencies": {
-        "markdown-it": "^12.0.2",
-        "@justforfun-click/mathjax": "3.1.2-1"
+        "markdown-it": "12.0.2",
+        "@justforfun-click/mathjax": "3.1.2-2"
     }
 }

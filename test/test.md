@@ -27,8 +27,15 @@ bla bla.
 ## Multiple line test
 > <img style="height:100px" src="https://math.justforfun.click/$/
     {
-        (2x, +, 17y, =, 23),
-        (x, -, y, =, 5)
+        (2x, +, 17y, =, 23,,,(1)),
+        (x, -, y, =, 5,,,(2))
+    :}
+">
+
+> <img style="height:100px" src="https://math.justforfun.click/$/
+    f(x) = {
+        (n/2,,, ``if `` n `` is even``),
+        (-(n+1)/2,,, ``if `` n `` is odd``)
     :}
 ">
 
@@ -38,7 +45,13 @@ bla bla.
 > <img src="https://math.justforfun.click/$/f'(x) = h'(g(x)) * g'(x)"/>
 
 ## Align center
-<p align="center"><img src="https://math.justforfun.click/$/a = a + b"/></p>
+> <p align="center"><img src="https://math.justforfun.click/$/a = a + b"/></p>
 
 ## Two instances in one html block
-<p align="center"><img src="https://math.justforfun.click/$/a = a + b"/></p><p align="center"><img src="https://math.justforfun.click/$/c = d + e"/></p>
+> <p align="center"><img src="https://math.justforfun.click/$/a = a + b"/></p><p align="center"><img src="https://math.justforfun.click/$/c = d + e"/></p>
+
+## Url decoding test
+> <img src="https://math.justforfun.click/$/n xx 10%25 %22    if %22 n %22 is negative%22"/>
+
+## `` test
+> <img style="width: 200px;" src="https://math.justforfun.click/$/obrace(1+2+3+4)^(``4 terms``)"/>

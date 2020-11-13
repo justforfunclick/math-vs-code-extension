@@ -1,3 +1,7 @@
+0.1.3
+  * Update `@justforfun-click/mathjax` to `3.1.2-2`. Supports use `` surround text.
+  * Fix url decoding issue.
+
 0.1.2
   * Switch to `@justforfun-click/mathjax:3.1.2-1`. It fixes prime display issue: [PR](https://github.com/mathjax/MathJax-src/pull/562).
 

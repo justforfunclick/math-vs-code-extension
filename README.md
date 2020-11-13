@@ -47,8 +47,8 @@ For example:
 ```
 <img src="https://math.justforfun.click/$/
     {
-        (2x, +, 17y, =, 23),
-        (x, -, y, =, 5)
+        (2x, +, 17y, =, 23,,(1)),
+        (x, -, y, =, 5,,(2))
     :}
 ">
 ```
@@ -57,10 +57,48 @@ will get:
 
 > <img src="https://math.justforfun.click/$/
     {
-        (2x, +, 17y, =, 23),
-        (x, -, y, =, 5)
+        (2x, +, 17y, =, 23,,(1)),
+        (x, -, y, =, 5,,(2))
     :}
 ">
+
+and
+
+```
+<img src="https://math.justforfun.click/$/
+    f(x) = {
+                (n/2,, ``if `` n `` is even``),
+                (-(n+1)/2,, ``if `` n `` is odd``)
+           :}
+">
+```
+
+will get:
+
+> <img src="https://math.justforfun.click/$/
+    f(x) = {
+                (n/2,, ``if `` n `` is even``),
+                (-(n+1)/2,, ``if `` n `` is odd``)
+           :}
+">
+
+Due to html parser limitation, quote (`"`) can' be directly used. But you can use `` (two back quotes) instead.
+For example:
+```
+<img style="height:50px" src="https://math.justforfun.click/$/obrace(1+2+3+4)^(``4 terms``)"/>
+```
+
+will get:
+
+> <img style="height:50px" src="https://math.justforfun.click/$/obrace(1+2+3+4)^(``4 terms``)"/>
+
+Or use url encoded character `%22`:
+```
+<img style="height:50px" src="https://math.justforfun.click/$/obrace(1+2+3+4)^(%224 terms%22)"/>
+```
+
+will get the same result:
+> <img style="height:50px" src="https://math.justforfun.click/$/obrace(1+2+3+4)^(%224 terms%22)"/>
 
 Shortcut `Ctrl+M` will insert `<img src="https://math.justforfun.click/$/"/>` for you, so that you don't need type the long text.
 

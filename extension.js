@@ -30,7 +30,7 @@ function render(md, options) {
             }
 
             var imgContent = imgMatches[0];
-            var mathContent = imgMatches[1].replace(/\s+/g, ' ');
+            var mathContent = decodeURI(imgMatches[1]).replace(/\s+/g, ' ');
             var svgContent = adaptor.innerHTML(html.convert(mathContent));
             var imgStyleMatches = imgContent.match(imgStyleRex);
             if (imgStyleMatches) {
