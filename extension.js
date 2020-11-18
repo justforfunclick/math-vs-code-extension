@@ -1,22 +1,13 @@
 'use strict';
 
-const mathJaxPackage = "@justforfun-click/mathjax"
-const { mathjax } = require(`${mathJaxPackage}/js/mathjax`);
-const { AsciiMath } = require(`${mathJaxPackage}/js/input/asciimath`);
-const { SVG } = require(`${mathJaxPackage}/js/output/svg`);
-const { RegisterHTMLHandler } = require(`${mathJaxPackage}/js/handlers/html`);
-const { liteAdaptor } = require(`${mathJaxPackage}/js/adaptors/liteAdaptor`);
-
-const adaptor = liteAdaptor();
-const handler = RegisterHTMLHandler(adaptor);
-const ascii = new AsciiMath();
-const svg = new SVG();
-const html = mathjax.document('', {InputJax: ascii, OutputJax: svg});
+const { mathToSvg } = require('@justforfun-click/mathjax/js/mathToSvg');
 
 const vscode = require('vscode');
-const mathTemplateSnippet = new vscode.SnippetString('<img src="https://math.justforfun.click/$/$0"/>');
+const asciiMathTemplateSnippet = new vscode.SnippetString('<img src="https://math.justforfun.click/$/$0"/>');
+const latexMathTemplateSnipped = new vscode.SnippetString('<img src="https://math.justforfun.click/$$/$0"/>');
+var mathTemplateSnippet = asciiMathTemplateSnippet;
 
-const imgRex = /<img .*?\bsrc\s*=\s*"https:\/\/math\.justforfun\.click\/\$\/([^"]*)"[^>]*>/s;
+const imgRex = /<img .*?\bsrc\s*=\s*"https:\/\/math\.justforfun\.click\/(\$\$?\/[^"]*)"[^>]*>/s;
 const imgStyleRex = /\bstyle\s*=\s*"([^"]*)"/s;
 
 function render(md, options) {
@@ -30,8 +21,7 @@ function render(md, options) {
             }
 
             var imgContent = imgMatches[0];
-            var mathContent = decodeURI(imgMatches[1]).replace(/\s+/g, ' ');
-            var svgContent = adaptor.innerHTML(html.convert(mathContent));
+            var svgContent = mathToSvg(decodeURI(imgMatches[1])) || "";
             var imgStyleMatches = imgContent.match(imgStyleRex);
             if (imgStyleMatches) {
                 var styleContent = imgStyleMatches[1];
@@ -53,6 +43,16 @@ function render(md, options) {
 exports.activate = function activate(context) {
     vscode.commands.registerCommand('math-to-svg.insert-math', () => {
         var editor = vscode.window.activeTextEditor;
+        switch (vscode.workspace.getConfiguration('math-to-svg')['notation'].toLowerCase()) {
+        default:
+        case "asciimath":
+            mathTemplateSnippet = asciiMathTemplateSnippet;
+            break;
+
+        case "latex":
+            mathTemplateSnippet = latexMathTemplateSnipped;
+            break;
+        }
         editor.insertSnippet(mathTemplateSnippet);
     });
 

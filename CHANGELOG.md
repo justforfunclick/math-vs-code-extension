@@ -1,3 +1,6 @@
+0.1.4
+  * Update `@justforfun-click/mathjax` to `3.1.2-3`. Supports LateX notation.
+
 0.1.3
   * Update `@justforfun-click/mathjax` to `3.1.2-2`. Supports use `` surround text.
   * Fix url decoding issue.

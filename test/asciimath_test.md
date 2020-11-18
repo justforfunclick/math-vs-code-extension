@@ -1,4 +1,4 @@
-# Math To SVG Tests
+# Math To SVG AsciiMath Tests
 
 ## Inline Test
 > Bla bla <img src="https://math.justforfun.click/$/sum_{i=1}^100 x_i + y_i"/> bla bla bal
@@ -55,3 +55,6 @@ bla bla.
 
 ## `` test
 > <img style="width: 200px;" src="https://math.justforfun.click/$/obrace(1+2+3+4)^(``4 terms``)"/>
+
+## Color test
+> <img src="https://math.justforfun.click/$/k = color(red)(x) color(blue)(-) 2"/>

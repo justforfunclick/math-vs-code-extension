@@ -1,13 +1,21 @@
 # <img style="width:64px; vertical-align:middle" src="https://raw.githubusercontent.com/justforfun-click/math-vs-code-extension/master/icon.png"> Math To SVG
 
-This extension will convert [AsciiMath](http://asciimath.org/) notations to SVG for Markdown.
+This extension will convert [AsciiMath](http://asciimath.org/) or [LaTeX](https://en.wikibooks.org/wiki/LaTeX) notations to SVG for Markdown.
 
-Syntax:
+## Syntax
+For AsciiMath:
 
 ```
 <img src="https://math.justforfun.click/$/ascii-math-notation"/>
 ```
 
+For LateX:
+
+```
+<img src="https://math.justforfun.click/$$/ascii-math-notation"/>
+```
+
+## AsciiMath
 For example:
 
 ```
@@ -100,7 +108,47 @@ Or use url encoded character `%22`:
 will get the same result:
 > <img style="height:50px" src="https://math.justforfun.click/$/obrace(1+2+3+4)^(%224 terms%22)"/>
 
-Shortcut `Ctrl+M` will insert `<img src="https://math.justforfun.click/$/"/>` for you, so that you don't need type the long text.
+## LaTeX
+For example:
+
+```
+<img src="https://math.justforfun.click/$$/\lim\limits_{x \to \infty} \exp(-x) = 0"/>
+```
+
+will get:
+
+> <img src="https://math.justforfun.click/$$/\lim\limits_{x \to \infty} \exp(-x) = 0"/>
+
+You can also use multiple line style (although github doesn't support it):
+```
+<img src="https://math.justforfun.click/$$/
+M = \begin{bmatrix}
+       \frac{5}{6} & \frac{1}{6} & 0           --[0.3em]
+       \frac{5}{6} & 0           & \frac{1}{6} --[0.3em]
+       0           & \frac{5}{6} & \frac{1}{6}
+     \end{bmatrix}
+"/>
+```
+
+will get:
+> <img src="https://math.justforfun.click/$$/
+M = \begin{bmatrix}
+       \frac{5}{6} & \frac{1}{6} & 0           --[0.3em]
+       \frac{5}{6} & 0           & \frac{1}{6} --[0.3em]
+       0           & \frac{5}{6} & \frac{1}{6}
+     \end{bmatrix}
+"/>
+
+Visit [https://en.wikibooks.org/wiki/LaTeX/Mathematics](https://en.wikibooks.org/wiki/LaTeX/Mathematics) for more latex syntax, but you need
+remember the following rules:
+* `\\` command should be replaced with `--`
+* `"` should be replaced with `` (two back quote characters).
+* `/` should be replaced with `//`
+
+### Others
+Shortcut `Ctrl+M` will insert `<img src="https://math.justforfun.click/$/"/>` for you. So that you don't need type the long text.
+By default, it will use AsciiMath notation. If you want to use LateX notation as default, you can change the setting `math-to-svg.notation`
+from `AsciiMath` to `LateX`.
 
 Github friendly. Formulas can be displayed in github directly.
 
