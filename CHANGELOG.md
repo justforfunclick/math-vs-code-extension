@@ -1,3 +1,6 @@
+0.1.6
+  * Change the backend service uri.
+
 0.1.4
   * Update `@justforfun-click/mathjax` to `3.1.2-3`. Supports LateX notation.
 

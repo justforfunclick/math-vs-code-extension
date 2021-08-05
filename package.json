@@ -3,7 +3,7 @@
     "displayName": "Math to SVG",
     "description": "Convert AsciiMath notation to SVG for Markdown",
     "icon": "icon.png",
-    "version": "0.1.4",
+    "version": "0.1.6",
     "publisher": "justforfun-click",
     "engines": {
         "vscode": "^1.51.0"
@@ -19,7 +19,7 @@
     "preview": true,
     "repository": {
         "type": "git",
-        "url": "https://github.com/justforfun-click/math-vs-code-extension"
+        "url": "https://github.com/justforfunclick/math-vs-code-extension"
     },
     "license": "MIT",
     "activationEvents": [

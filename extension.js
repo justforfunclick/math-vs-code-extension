@@ -3,8 +3,8 @@
 const { mathToSvg } = require('@justforfun-click/mathjax/js/mathToSvg');
 
 const vscode = require('vscode');
-const asciiMathTemplateSnippet = new vscode.SnippetString('<img src="https://math.justforfun.click/$/$0"/>');
-const latexMathTemplateSnipped = new vscode.SnippetString('<img src="https://math.justforfun.click/$$/$0"/>');
+const asciiMathTemplateSnippet = new vscode.SnippetString('<img src="https://math.azureedge.net/$/$0"/>');
+const latexMathTemplateSnipped = new vscode.SnippetString('<img src="https://math.azureedge.net/$$/$0"/>');
 var mathTemplateSnippet = asciiMathTemplateSnippet;
 
 const imgRex = /<img .*?\bsrc\s*=\s*"https:\/\/math\.justforfun\.click\/(\$\$?\/[^"]*)"[^>]*>/s;
